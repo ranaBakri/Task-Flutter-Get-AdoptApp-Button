@@ -27,12 +27,6 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                Provider.of<PetsProvider>(context, listen: false).getPets();
-              },
-              child: const Text("GET"),
-            ),
             Consumer<PetsProvider>(
               builder: (context, petsProvider, child) => GridView.builder(
                   shrinkWrap: true,
