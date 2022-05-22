@@ -1,4 +1,5 @@
 import 'package:adopt_app/models/pet.dart';
+import 'package:adopt_app/services/pets.dart';
 import 'package:flutter/material.dart';
 
 class PetsProvider extends ChangeNotifier {
@@ -9,4 +10,9 @@ class PetsProvider extends ChangeNotifier {
         age: 2,
         gender: "male")
   ];
+
+  Future<void> getPets() async {
+    pets = await DioClient().getPets();
+    notifyListeners();
+  }
 }

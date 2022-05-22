@@ -45,4 +45,6 @@ Get, http://http://10.0.2.2:5000/pets
 
 13. In your `PetsProvider`, create a new function that returns a future void.
 14. Import `services/pets.dart` file, and call `DioClient().getPets()` function, don't forget to `await`.
-15. Lastly assign the result of `DioClient().getPets()` to the `pets` variable in the provider.
+15. Lastly assign the result of `DioClient().getPets()` to the `pets` variable in the provider and call `notifyListeners`.
+
+16. Create a button in your `home_page.dart` and call the provider method `getPets`. Don't forget to set `listen` to `false`.
