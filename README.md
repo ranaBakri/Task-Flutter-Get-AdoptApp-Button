@@ -36,7 +36,7 @@ import "package:dio/dio.dart";
 7. Our endpoint is:
 
 ```
-Get, http://http://10.0.2.2:5000/pets
+Get, https://coded-pets-api-crud.herokuapp.com/pets
 ```
 
 8. Store the response of the request in a `Response` object.
