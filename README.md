@@ -1,16 +1,18 @@
 # Pets Adoption App 🦄
 
+![Ipets](https://user-images.githubusercontent.com/84308096/167295237-ac5ea80c-cb66-4975-9a93-c844dbfc6b37.png)
+
 ## Instructions
 
-- Fork and clone [this repository](https://github.com/JoinCODED/Task-Flutter-CRUD-AdoptApp) to your `Development` folder.
+- Fork and clone [this repository](https://github.com/JoinCODED/Task-Flutter-Get-AdoptApp-Button) to your `Development` folder.
 - Endpoints:
 
 ```
-Get pets, type: Get, http://http://10.0.2.2:5000/pets
-Create a new pet, type: Post, http://http://10.0.2.2:5000/pets
-Update a pet, type: Put, http://http://10.0.2.2:5000/pets/{petId}
-Delete a pet, type: Delete, http://http://10.0.2.2:5000/pets/{petId}
-Adopt a pet, type: Post, http://http://10.0.2.2:5000/pets/adopt/{petId}
+Get pets, type: Get, https://coded-pets-api-crud.herokuapp.com/pets
+Create a new pet, type: Post, https://coded-pets-api-crud.herokuapp.com/pets
+Update a pet, type: Put, https://coded-pets-api-crud.herokuapp.com/pets/{petId}
+Delete a pet, type: Delete, https://coded-pets-api-crud.herokuapp.com/pets/{petId}
+Adopt a pet, type: Post, https://coded-pets-api-crud.herokuapp.com/pets/adopt/{petId}
 ```
 
 ### Part 1: Get Data
