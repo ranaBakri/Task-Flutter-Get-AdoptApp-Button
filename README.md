@@ -54,7 +54,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'pet.g.dart';
 @JsonSerializable()
 ```
-13. hen run this in terminal `flutter pub run build_runner build`
+13. Run this in terminal `flutter pub run build_runner build`
 14. Add the following code in the pet model
 ```dart 
 factory Pet.fromJson(Map<String, dynamic> json) => _$PetFromJson(json);
