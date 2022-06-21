@@ -24,6 +24,16 @@ class HomePage extends StatelessWidget {
                 onPressed: () {},
                 child: const Padding(
                   padding: EdgeInsets.all(12.0),
+                  child: Text("Get All pets"),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Padding(
+                  padding: EdgeInsets.all(12.0),
                   child: Text("Add a new Pet"),
                 ),
               ),
