@@ -23,30 +23,46 @@ Adopt a pet, type: Post, https://coded-pets-api-crud.herokuapp.com/pets/adopt/{p
 flutter pub add dio
 ```
 
-2. Create a folder named `services`, inside it create a file called `pets.dart`.
-3. Import `dio` package in `pets.dart`.
+2. Create a folder named `services`, inside it create a file called `pets_services.dart`.
+3. Import `dio` package in `pets_services.dart`.
 
 ```dart
 import "package:dio/dio.dart";
 ```
 
 4. Create a new `DioClient` class and initialize a new dio instance.
-5. Define your `_baseUrl`.
-6. Create your first request that return a future list of pets and name it `getPets`.
+6. Create a function to get the list of pets and name it `getPets`.
 7. Our endpoint is:
 
 ```
 Get, https://coded-pets-api-crud.herokuapp.com/pets
 ```
+8. Dont forget to ass async and await
+9. Store the response of the request in a `Response` object.
+10. In your `PetsProvider`, create a new function that calls `getPets` .
+11. Make the button in the home_page call the provider function.
+12. Print the response in the debug console. 
 
-8. Store the response of the request in a `Response` object.
-9. Map your response to `Pet` objects using the `Pet.fromJson` constructor.
-10. Don't forget to convert the result to a `List`.
-11. Return your new `List` of `Pet`s.
-12. Don't forget to wrap your request in a `try-catch` block.
 
-13. In your `PetsProvider`, create a new function that returns a future void.
-14. Import `services/pets.dart` file, and call `DioClient().getPets()` function, don't forget to `await`.
-15. Lastly assign the result of `DioClient().getPets()` to the `pets` variable in the provider and call `notifyListeners`.
+### Part 2: Use the data
 
-16. Create a button in your `home_page.dart` and call the provider method `getPets`. Don't forget to set `listen` to `false`.
+11. Add the following packages `flutter pub add json_serializable , build_runner`
+12. Go to the pets model and add this code before the class
+``` dart 
+import 'package:json_annotation/json_annotation.dart';
+
+part 'pet.g.dart';
+@JsonSerializable()
+```
+13. hen run this in terminal `flutter pub run build_runner build`
+14. Add the following code in the pet model
+```dart 
+factory Pet.fromJson(Map<String, dynamic> json) => _$PetFromJson(json);
+  Map<String, dynamic> toJson() => _$PetToJson(this);
+```
+
+15. In `pets_services.dart` save the response in a list of pets and convert from Json to pet `List<Pet> pets =(res.data as List).map((pet) => Pet.fromJson(pet)).toList();`
+16. Add try and catch in case of Dio Error try{...}on DioError catch(error){...}
+17. Change return type to List<Pet>, fix the function so that it returns a future list of pets
+18. Finally fix the provider as well by adding async and await
+  
