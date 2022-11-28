@@ -1,5 +1,5 @@
 class Pet {
-  int? id;
+  int id;
   String name;
   String image;
   int age;
@@ -7,7 +7,7 @@ class Pet {
   String gender;
 
   Pet(
-      {this.id,
+      {required this.id,
       required this.name,
       required this.image,
       this.adopted = false,
@@ -15,7 +15,7 @@ class Pet {
       required this.gender});
 
   Pet.fromJson(Map<String, dynamic> json)
-      : id = json['id'] as int?,
+      : id = json['id'] as int,
         name = json['name'] as String,
         adopted = json['adopted'] as bool,
         image = json['image'] as String,

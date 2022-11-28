@@ -21,7 +21,12 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  print('hello');
+                  context
+                      .read<PetsProvider>()
+                      .getPet(); // I can access the pets provider
+                },
                 child: const Padding(
                   padding: EdgeInsets.all(12.0),
                   child: Text("Get All pets"),
